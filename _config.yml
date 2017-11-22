@@ -3,18 +3,19 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Permalinks
-permalink:        pretty
+# permalink:        pretty
 
 # Setup
 title:            34_Space
-tagline:          'A Jekyll theme'
+tagline:          ''
 description:      '紀錄程式心得以及存放基礎程式碼'
 url:              ''
-baseurl:          'https://b013040034.github.io/ohmyblog/'
+baseurl:          /
+
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Aslan Yan'
+  url:            https://www.facebook.com/profile.php?id=100000032170714&ref=bookmarks
 
 paginate:         5
 
@@ -22,5 +23,5 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/B013040034/ohmyblog
 plugins:          [jekyll-paginate]
