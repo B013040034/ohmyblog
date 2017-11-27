@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contact me
-permalink: /ohmyblog/about/
+permalink: /about/
 ---
 
 ## e-mail
