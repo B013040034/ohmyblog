@@ -10,7 +10,8 @@ title:            34_Space
 tagline:          ''
 description:      '紀錄程式心得以及存放基礎程式碼'
 url:              ''
-baseurl:          /
+baseurl:          "https://b013040034.github.io/ohmyblog/"
+# baseurl:          /
 
 
 author:

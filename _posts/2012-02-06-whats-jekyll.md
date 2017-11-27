@@ -1,8 +1,8 @@
 ---
 layout: post
-title: tag1
-tag : tag1
-category : A
+title: android test
+tag : AndroidTest
+category : Test
 ---
 
 ##test
