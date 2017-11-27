@@ -1,7 +1,7 @@
 ---
 layout: sidebarCategory
 title: Category
-permalink: /category/
+permalink: /ohmyblog/category/
 ---
 
 

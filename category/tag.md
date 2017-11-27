@@ -1,7 +1,7 @@
 ---
 layout: sidebarTags
 title: Tag
-permalink: /tag/
+permalink: /ohmyblog/tag/
 ---
 
 
