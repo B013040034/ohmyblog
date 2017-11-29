@@ -1,7 +1,6 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
-
 # Permalinks
 # permalink:        pretty
 
@@ -9,10 +8,10 @@ highlighter:      rouge
 title:            34_Space
 tagline:          ''
 description:      '紀錄程式心得以及存放基礎程式碼'
-#url:              'http://127.0.0.1:4000'
-#baseurl:          "/"
-url:              '/ohmyblog'
-baseurl:          "https://b013040034.github.io/ohmyblog/"
+url:              'http://127.0.0.1:4000'
+baseurl:          "/"
+#url:              '/ohmyblog'
+#baseurl:          "https://b013040034.github.io/ohmyblog/"
 
 
 
