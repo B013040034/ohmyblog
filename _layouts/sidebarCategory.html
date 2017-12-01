@@ -39,7 +39,10 @@ The purpose of this snippet is to list all the tags you have in your site.
 {% endcomment %}
 
 {% for tag in tags %}
-<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+<div class="tag">
+    <p style="float : left"><img src="/public/quill.png"></p>
+    <p href="#{{ tag | slugify }}" class="white">{{ tag }}</p> 
+</div>
 {% endfor %}
 
 {% comment %}
@@ -57,6 +60,7 @@ The purpose of this snippet is to list all your posts posted with a certain tag.
         <h3>
             <a href="{{ site.url }}{{ post.url }}">
                 {{ post.title }}
+                <br>&emsp;&emsp;
                 <small>{{ post.date | date_to_string }}</small>
             </a>
         </h3>

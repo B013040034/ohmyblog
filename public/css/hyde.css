@@ -45,7 +45,13 @@ html {
   }
 }
 
-
+.tag {
+   vertical-align: middle;
+   background-color: #204405;
+}
+.white {
+  color: #fff;
+}
 /*
  * Sidebar
  *
