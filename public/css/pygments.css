@@ -1,7 +1,6 @@
 .highlight pre {
 	color: #a9b7c6;
- 	background-color: #2B2B2B; 
-	font-size: 20px;
+ 	background-color: #2B2B2B;
     border: 1px solid $grey-color-light;
     border-radius: 8px;
     }
