@@ -1,6 +1,6 @@
 ---
 layout: post
-title: how to handle the api responses with Retrofit
+title: how to handle the api responses by Retrofit
 tag : Retrofit Gson
 category : Android
 ---
