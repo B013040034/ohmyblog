@@ -1,6 +1,7 @@
 .highlight pre {
 	color: #a9b7c6;
 	font-family: "KaiTi", "STKaiti";
+	font-size: 1.1rem;
  	background-color: #2B2B2B;
     border: 1px solid $grey-color-light;
     border-radius: 8px;
