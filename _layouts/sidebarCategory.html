@@ -40,8 +40,15 @@ The purpose of this snippet is to list all the tags you have in your site.
 
 {% for tag in tags %}
 <div class="tag">
-    <p style="float : left"><img src="/public/quill.png"></p>
-    <p href="#{{ tag | slugify }}" class="white">{{ tag }}</p> 
+    <table border="0">
+    <tr>
+        <td width="30px" style="border: 1px solid #ffffff; text-align: bottom;">
+            <img src="/public/arrow.png" class="icon" width="64" style="margin: 0 0 0rem;"></td>
+        <td style="border: 1px solid #ffffff; ">
+            <h2 style="margin: margin-top: rem; margin-bottom: 1rem;" id="{{ tag | slugify }}">{{ tag }}</h2>
+        </td>
+    </tr>
+</table>
 </div>
 {% endfor %}
 
@@ -52,19 +59,20 @@ The purpose of this snippet is to list all your posts posted with a certain tag.
 {% endcomment %}
 
 {% for tag in tags %}
+{% comment %}
 <h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+{% endcomment %}
 <ul>
     {% for post in site.posts %}
     {% if post.category contains tag %}
-    <li>
+       
         <h3>
             <a href="{{ site.url }}{{ post.url }}">
                 {{ post.title }}
-                <br>&emsp;&emsp;
-                <small>{{ post.date | date_to_string }}</small>
             </a>
+            <small class="category_date">{{ post.date | date_to_string }}</small>
         </h3>
-    </li>
+    
     {% endif %}
     {% endfor %}
 </ul>
