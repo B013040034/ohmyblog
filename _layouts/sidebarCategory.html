@@ -37,43 +37,58 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 The purpose of this snippet is to list all the tags you have in your site.
 =======================
 {% endcomment %}
-
+    <link rel="stylesheet" href="{{ site.baseurl }}public/css/boot.css">
+<p>
+<p class="btn btn-outline-secondary"  id="all" onclick="displayData('all')">All</p>
+<script>
+    
+</script>
 {% for tag in tags %}
-<div class="tag">
+    <!--
     <table border="0">
     <tr>
-        <td width="30px" style="border: 1px solid #ffffff; text-align: bottom;">
+        <td width="30px" style="border: 1px solid #00000; text-align: bottom;">
             <img src="/public/arrow.png" class="icon" width="64" style="margin: 0 0 0rem;"></td>
         <td style="border: 1px solid #ffffff; ">
             <h2 style="margin: margin-top: rem; margin-bottom: 1rem;" id="{{ tag | slugify }}">{{ tag }}</h2>
         </td>
     </tr>
-</table>
-</div>
-{% endfor %}
+</table>-->
 
-{% comment %}
-=======================
-The purpose of this snippet is to list all your posts posted with a certain tag.
-=======================
-{% endcomment %}
-
-{% for tag in tags %}
-{% comment %}
-<h2 id="{{ tag | slugify }}">{{ tag }}</h2>
-{% endcomment %}
-<ul>
-    {% for post in site.posts %}
-    {% if post.category contains tag %}
+        <p class="btn btn-outline-secondary"  id="{{ tag }}" onclick="displayData('{{ tag }}')">{{ tag }}</p>
        
-        <h3>
-            <a href="{{ site.url }}{{ post.url }}">
-                {{ post.title }}
-            </a>
-            <small class="category_date">{{ post.date | date_to_string }}</small>
-        </h3>
-    
-    {% endif %}
-    {% endfor %}
-</ul>
 {% endfor %}
+</p>
+
+ <script>
+        function displayData(tag) {
+            var json = {{ site.posts | jsonify }};
+            var html = "";
+            for (i = 0; i < json.length; i++) { 
+                if(json[i].categories == tag || tag == 'all') {
+                    html += '<div> <a href="{{ site.url }}' + json[i].url + '">' + json[i].title + '</a><p class="category_date">' + formatDate(new Date(json[i].date.substring(0, 19))) + '</p></div>';
+                }
+            }
+            document.getElementById('test').innerHTML = html;
+        }
+
+        function formatDate(date) {
+            var monthNames = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
+
+            var day = date.getDate();
+            var monthIndex = date.getMonth();
+            var year = date.getFullYear();
+
+            return day + ' ' + monthNames[monthIndex] + ' ' + year;
+        }
+    </script>
+
+<div id='test'>
+</div>
+
+<script>
+// self executing function here
+(function() {
+   displayData("all");
+})();
+</script>

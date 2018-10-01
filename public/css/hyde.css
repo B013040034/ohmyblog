@@ -30,9 +30,9 @@
  *
  * Update the foundational and global aspects of the page.
  */
-
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 html {
-  font-family: "STKaiti", "KaiTi", Microsoft YaHei, "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans TC", sans-serif, "STKaiti", "KaiTi", Microsoft YaHei, "PT Sans", Helvetica, Arial;
 }
 @media (min-width: 48em) {
   html {
@@ -86,7 +86,7 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Microsoft JhengHei", sans-serif;
+  font-family: "PT Sans", "Microsoft JhengHei";
   font-size: 3.25rem;
 }
 

@@ -2,7 +2,7 @@
 layout: post
 title: 圖片拖曳
 tag : image
-category : Android
+category : Kotlin
 ---
 
 ### 設定觸控時監聽
