@@ -8,10 +8,10 @@ highlighter:      rouge
 title:            34_Space
 tagline:          ''
 description:      'Record coding experience and store my base code.'
-url:              'http://127.0.0.1:4000'
-baseurl:          "/"
-#url:              '/ohmyblog'
-#baseurl:          "https://b013040034.github.io/ohmyblog/"
+#url:              'http://127.0.0.1:4000'
+#baseurl:          "/"
+url:              '/ohmyblog'
+baseurl:          "https://b013040034.github.io/ohmyblog/"
 
 
 
