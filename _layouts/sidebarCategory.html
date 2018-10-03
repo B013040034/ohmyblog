@@ -39,25 +39,10 @@ The purpose of this snippet is to list all the tags you have in your site.
 {% endcomment %}
     <link rel="stylesheet" href="{{ site.baseurl }}public/css/boot.css">
 <p>
-<p class="btn btn-outline-secondary"  id="all" onclick="displayData('all')">All</p>
-<script>
-    
-</script>
-{% for tag in tags %}
-    <!--
-    <table border="0">
-    <tr>
-        <td width="30px" style="border: 1px solid #00000; text-align: bottom;">
-            <img src="/public/arrow.png" class="icon" width="64" style="margin: 0 0 0rem;"></td>
-        <td style="border: 1px solid #ffffff; ">
-            <h2 style="margin: margin-top: rem; margin-bottom: 1rem;" id="{{ tag | slugify }}">{{ tag }}</h2>
-        </td>
-    </tr>
-</table>-->
-
+    <p class="btn btn-outline-secondary"  id="all" onclick="displayData('all')">All</p>
+    {% for tag in tags %}
         <p class="btn btn-outline-secondary"  id="{{ tag }}" onclick="displayData('{{ tag }}')">{{ tag }}</p>
-       
-{% endfor %}
+    {% endfor %}
 </p>
 
  <script>
@@ -87,8 +72,7 @@ The purpose of this snippet is to list all the tags you have in your site.
 </div>
 
 <script>
-// self executing function here
-(function() {
-   displayData("all");
-})();
+    (function() {
+       displayData("all");
+    })();
 </script>

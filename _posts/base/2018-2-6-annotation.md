@@ -5,19 +5,18 @@ tag : annotation
 category : Android
 ---
 
-# 目標：建立類似Butterkinfe的Annotation
+## 目標：建立類似Butterknife的Annotation
 
-## Create a Annotation class 
-{% highlight java %}
+### Create a Annotation class 
+``` java
 @Retention(CLASS) @Target(FIELD)
 public @interface Bind {
     @IdRes int value();
 }
-{% endhighlight %}
-<br>
+```
 
-## write a Singleton class to handle TODO
-{% highlight java %}
+### write a Singleton class to handle TODO
+``` java
 public class AnnotationBind {
     private static AnnotationBind annotationBind;
     public static AnnotationBind instance() {
@@ -44,11 +43,11 @@ public class AnnotationBind {
         }
     }
 }
-{% endhighlight %}
+```
 
 
-## inject the class when activity oncreate
-{% highlight java %}
+### inject the class when activity oncreate
+``` java
     @Bind(R.id.text)
     TextView before;
     @Override
@@ -60,4 +59,4 @@ public class AnnotationBind {
 
         before.setText("dddd");
     }
-{% endhighlight %}
+```

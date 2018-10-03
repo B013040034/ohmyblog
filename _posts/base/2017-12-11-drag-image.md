@@ -7,24 +7,25 @@ category : Kotlin
 
 ### 設定觸控時監聽
 
-{% highlight java %}
+``` java
 imageView.setOnTouchListener(imgListener);
-{% endhighlight %}
+```
 
 ### 計算出 actionBar長度以供設定圖片位置
 
 > Hint : 可將 `actionBarHeight` 存在全域
-{% highlight java %}
+
+``` java
 public void getActionBarHeight() {
     TypedValue tv = new TypedValue();
     if (getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
         actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
 }
-{% endhighlight %}
+```
 
 ### 監聽拖曳動作並重設位置
 
-{% highlight java %}
+``` java
 private View.OnTouchListener imgListener = new View.OnTouchListener() {
     private float lengthXFromLeftToTouchEvent, lengthYFromTopToTouchEvent;
     @Override
@@ -49,37 +50,37 @@ private View.OnTouchListener imgListener = new View.OnTouchListener() {
         return true;
     }
 };
-{% endhighlight %}
+```
 
 ### 離開app時儲存資訊
 
-{% highlight java %}
+``` java
 @Override
 protected void onPause() {
     super.onPause();
     sharedpreferencesEditor.saveInt("lengthXFromLeftToTouchEvent", mx);
     sharedpreferencesEditor.saveInt("lengthYFromTopToTouchEvent", my);
 }
-{% endhighlight %}
+```
 
 ### 進入app時重設位置
-{% highlight java %}
+``` java
 public void initView() {
     imageView = findViewById(R.id.imageView);
     mx = sharedpreferencesEditor.readInt("lengthXFromLeftToTouchEvent");
     my = sharedpreferencesEditor.readInt("lengthYFromTopToTouchEvent");
     imageView.layout(mx, my, mx + imageView.getWidth(), my + imageView.getHeight());
 }
-{% endhighlight %}
+```
 
 ### 補充
 
 這裡提供兩種設定圖片位置的方法，但是不能混用
-{% highlight java %}
+``` java
 v.layout(mx, my, mx + v.getWidth(), my + v.getHeight());
-{% endhighlight %}
+```
 
-{% highlight java %}
+``` java
 v.setX(mx);
 v.setY(mx);
-{% endhighlight %}
+```

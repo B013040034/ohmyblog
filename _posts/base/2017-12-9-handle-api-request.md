@@ -1,11 +1,12 @@
 ---
 layout: post
-title: how to handle the api responses by Retrofit
+title: Retrofit sample
 tag : Retrofit Gson
 category : Android
 ---
 
-## dependencies
+## handle api request by Retrofit
+### dependencies
 {% highlight java %}
 dependencies {
    compile 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -14,11 +15,11 @@ dependencies {
 {% endhighlight %}
 <br>
 
-## Website
+### Website
 **[https://github.com/square/retrofit](https://github.com/square/retrofit).**  
 <br>
 
-## New instance
+### New instance
 {% highlight java %}
 public class ApiClient {
     public static final String BASE_URL = "https://api/";
@@ -37,7 +38,7 @@ public class ApiClient {
 {% endhighlight %}
 <br>
 
-## Set path
+### Set path
 {% highlight java %}
 public interface ApiService {
     @GET("weather/{lat}/{lng}")
@@ -46,9 +47,9 @@ public interface ApiService {
 {% endhighlight %}
 <br>
 
-## Convert json to Object
+### Convert json to Object
 
-### maybe this your sample json 
+#### maybe this your sample json 
 
 {% highlight java %}
 {
@@ -62,7 +63,7 @@ public interface ApiService {
 > **[paste the json to the website to get code automatic](http://www.jsonschema2pojo.org/).**
 > And remember to `implements Serializable`
 
-### Result
+#### Result
 {% highlight java %}
 public class WeatherData implements Serializable {
     @SerializedName("location")
@@ -73,7 +74,7 @@ public class WeatherData implements Serializable {
 {% endhighlight %}
 <br>
 
-## Get data
+### Get data
 {% highlight java %}
 public void getWeatherData() {
         Retrofit retrofit = ApiClient.getClient();
