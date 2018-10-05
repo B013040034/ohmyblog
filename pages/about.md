@@ -1,5 +1,5 @@
 ---
 layout: about
-title: Contact me
+title: About me
 permalink: /about/
 ---

@@ -1,0 +1,51 @@
+apply plugin: 'maven'
+
+ext {
+    url ='http://192.168.X.XX:8081/nexus/content/repositories/your_library_server_name/'
+    nexus_account = 'admin'
+    nexus_password = 'admin123'
+    type = 'aar'
+    group_id = 'com.your_library_server_name'
+    aar_file = 'build/outputs/aar/' + project.name + '.aar'
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}
+
+//make original aar name from XXXX-release.aar to XXXX.aar
+android{
+    buildTypes {
+        release {
+            android.libraryVariants.all { variant ->
+                variant.outputs.all { output ->
+                    outputFileName = "${project.name}.aar"
+                }
+            }
+        }
+    }
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: url) {
+                authentication(userName: nexus_account, password: nexus_password)
+            }
+            pom.project {
+                version android.defaultConfig.versionName
+                artifactId project.name
+                groupId group_id
+                packaging type
+            }
+        }
+    }
+}
+
+artifacts {
+    archives file(aar_file)
+}

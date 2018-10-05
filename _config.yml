@@ -26,4 +26,4 @@ version:          2.1.0
 
 github:
   repo:           https://github.com/B013040034/ohmyblog
-plugins:          [jekyll-paginate]
+plugins:          [jekyll-paginate, jekyll-gist]
