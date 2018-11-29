@@ -5,6 +5,12 @@ tag : build
 category : Android
 ---
 
+### 使用情境
+
+* 手機圖片過多且支援每個解析度的圖，APK時會載到不必要的解析度的圖，因此導致apk檔案過大
+* 不同硬體的手機使用不同程式碼時有可以利用此方式減少apk大小
+* 有時候手機只需安裝某種特定語言的語言包
+
 ### 使用App bundle build aab
 
 使用3.2.1最新的Android studio版本
@@ -46,6 +52,28 @@ setArchivesBaseName("apk name")
     ``` java
     java -jar bundletool-all-0.6.2.jar install-apks --apks=my_app.apks --adb=C:\Users\aslanyan\AppData\Local\Android\sdk\platform-tools\adb.exe
     ```
+
+### gradle選擇那些需要被分離
+
+``` java
+android {
+    // Instead, use the bundle block to control which types of configuration APKs
+    // you want your app bundle to support.
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            // This property is set to true by default.
+            enableSplit = true
+        }
+        abi {
+            // This property is set to true by default.
+            enableSplit = false
+        }
+    }
+}
+```
 
 ### 優缺點
 
