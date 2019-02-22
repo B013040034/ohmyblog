@@ -63,7 +63,7 @@ html {
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
-  background-image: url("http://reso3.yiihuu.com/img_1103260.jpg");
+  background-image: url("../back.jpg");
   background-size: cover;
 }
 @media (min-width: 48em) {
