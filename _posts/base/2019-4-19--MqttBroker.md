@@ -10,8 +10,6 @@ Environment: Ubuntu
 Client lanaguage: Python
 Server: Mosquitto
 
-
-
 ## Broker
 
 **install:**
@@ -43,7 +41,6 @@ password_file /etc/mosquitto/passwd
 mosquitto -c /etc/mosquitto/mosquitto.conf
 ```
 
-
 ## Client (command test)
 
 **install:**
@@ -68,7 +65,6 @@ sudo apt-get install mosquitto-clients
 mosquitto_pub -h "localhost" -p "port"  -t "topicName" -m "test message" -u "username" -P "password"
 ```
 
-
 ## Client (python)
 
 **install:**
@@ -76,7 +72,7 @@ mosquitto_pub -h "localhost" -p "port"  -t "topicName" -m "test message" -u "use
 pip install paho-mqtt
 ```
 **SubscribeTest.py :**
-``` python=
+``` python
 import paho.mqtt.client as mqtt
 
 
@@ -96,7 +92,7 @@ client.loop_forever()
 ```
 
 **PublisherTest.py :**
-``` python=
+``` python
 # Publisher.py
 import paho.mqtt.client as mqtt
 
