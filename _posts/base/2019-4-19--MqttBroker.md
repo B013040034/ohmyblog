@@ -6,8 +6,8 @@ category : Mqtt
 ---
 
 ## Intro
-Environment: Ubuntu
-Client lanaguage: Python
+Environment: Ubuntu  
+Client lanaguage: Python  
 Server: Mosquitto
 
 ## Broker
